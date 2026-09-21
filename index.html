@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)https://assets.carat-api.im/upload_from_app/3097599/20260813/fc4f3837-d8e9-4699-8f5f-bc8789231a27.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f1e8">
+  <title>나의 목소리 | AAC 체험 캠페인</title>
+  <style>
+    :root {
+      --ink: #172436;
+      --muted: #687583;
+      --paper: #f6f1e8;
+      --surface: #fffdf8;
+      --line: #e5ded2;
+      --navy: #183550;
+      --navy-2: #254d6b;
+      --coral: #ef775f;
+      --coral-dark: #ca5548;
+      --yellow: #f4c95d;
+      --mint: #cfe7dd;
+      --sky: #dceaf3;
+      --lavender: #e8e0f1;
+      --shadow: 0 14px 40px rgba(38, 47, 54, .09);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --tap: 56px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 6% 4%, rgba(244, 201, 93, .20), transparent 22rem),
+        radial-gradient(circle at 94% 13%, rgba(207, 231, 221, .35), transparent 25rem),
+        var(--paper);
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button { font: inherit; }
+    button:focus-visible { outline: 4px solid rgba(239, 119, 95, .42); outline-offset: 3px; }
+
+    .wrap { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 0 12px;
+    }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 850; letter-spacing: -.04em; }
+    .brand-mark {
+      width: 38px; height: 38px; display: grid; place-items: center;
+      color: var(--surface); background: var(--navy); border-radius: 13px;
+    }
+    .brand-mark svg { width: 24px; height: 24px; }
+    .campaign-tag {
+      color: var(--navy-2); border: 1px solid #c8d9e0; background: rgba(255,255,255,.62);
+      padding: 9px 13px; border-radius: 999px; font-size: 13px; font-weight: 800;
+    }
+
+    .hero {
+      display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(300px, .82fr);
+      gap: 28px; align-items: stretch; padding: 46px 0 28px;
+    }
+    .eyebrow { display: inline-flex; gap: 8px; align-items: center; color: var(--coral-dark); font-size: 14px; font-weight: 850; }
+    .eyebrow::before { content: ""; width: 28px; height: 3px; background: var(--coral); border-radius: 4px; }
+    h1 { margin: 14px 0 15px; max-width: 680px; font-size: clamp(36px, 6vw, 67px); line-height: 1.06; letter-spacing: -.065em; }
+    .hero-copy { max-width: 640px; color: #53616c; font-size: clamp(16px, 2vw, 19px); line-height: 1.7; letter-spacing: -.025em; }
+    .hero-note { display: flex; gap: 12px; align-items: center; margin-top: 25px; color: var(--navy); font-size: 14px; font-weight: 750; }
+    .hero-note .mini-icon { width: 34px; height: 34px; display: grid; place-items: center; background: var(--yellow); border-radius: 12px; }
+
+    .meaning-card {
+      position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;
+      min-height: 248px; padding: 26px; color: var(--surface); background: var(--navy); border-radius: var(--radius-lg); box-shadow: var(--shadow);
+    }
+    .meaning-card::after { content: ""; position: absolute; right: -34px; bottom: -55px; width: 190px; height: 190px; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; box-shadow: 0 0 0 22px rgba(255,255,255,.06), 0 0 0 44px rgba(255,255,255,.04); }
+    .meaning-card h2 { position: relative; z-index: 1; margin: 0 0 13px; font-size: 24px; letter-spacing: -.05em; }
+    .meaning-card p { position: relative; z-index: 1; max-width: 340px; margin: 0; color: #dbe8ec; line-height: 1.65; font-size: 15px; }
+    .meaning-pill { position: relative; z-index: 1; align-self: flex-start; margin-top: 26px; padding: 10px 13px; color: var(--navy); background: var(--yellow); border-radius: 10px; font-size: 13px; font-weight: 850; }
+
+    .step-line { display: flex; align-items: center; gap: 12px; margin: 14px 0 20px; color: var(--muted); font-size: 13px; font-weight: 750; }
+    .step-line .step { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+    .step-number { display: grid; place-items: center; width: 25px; height: 25px; color: var(--surface); background: var(--navy); border-radius: 50%; font-size: 12px; }
+    .step-line .connector { flex: 0 1 44px; height: 1px; background: #d6cec1; }
+
+    .experience { display: grid; grid-template-columns: minmax(300px, .78fr) minmax(0, 1.22fr); gap: 20px; align-items: start; padding-bottom: 46px; }
+    .card { background: rgba(255, 253, 248, .86); border: 1px solid rgba(229, 222, 210, .93); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+    .composer { position: sticky; top: 14px; padding: 22px; }
+    .section-kicker { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; color: var(--muted); font-size: 12px; font-weight: 850; letter-spacing: .03em; text-transform: uppercase; }
+    .live-dot { display: inline-flex; gap: 6px; align-items: center; color: var(--coral-dark); text-transform: none; letter-spacing: 0; }
+    .live-dot::before { content: ""; width: 7px; height: 7px; background: var(--coral); border-radius: 50%; box-shadow: 0 0 0 5px rgba(239,119,95,.13); }
+    .sentence-box { min-height: 166px; display: flex; flex-wrap: wrap; align-content: flex-start; gap: 9px; padding: 17px; background: #f8f3eb; border: 1px dashed #d7cdbc; border-radius: 19px; }
+    .sentence-placeholder { align-self: center; width: 100%; color: #8a928f; font-size: 16px; line-height: 1.55; text-align: center; }
+    .token {
+      display: inline-flex; align-items: center; gap: 5px; min-height: 45px; padding: 9px 11px 9px 13px;
+      color: var(--navy); background: var(--surface); border: 1px solid #d6e0df; border-radius: 13px; font-weight: 850; cursor: pointer; box-shadow: 0 3px 0 rgba(23,36,54,.06); transition: transform .16s, background .16s;
+    }
+    .token:hover { transform: translateY(-2px); background: #fff; }
+    .token small { color: #8d9798; font-size: 15px; }
+    .composer-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 12px; }
+    .action-button { min-height: 55px; display: inline-flex; justify-content: center; align-items: center; gap: 8px; border: 0; border-radius: 15px; font-weight: 850; cursor: pointer; transition: transform .16s, filter .16s; }
+    .action-button:hover { transform: translateY(-2px); filter: brightness(1.02); }
+    .action-button.primary { color: white; background: var(--coral); box-shadow: 0 7px 0 #d36150; }
+    .action-button.secondary { color: var(--navy); background: var(--sky); }
+    .action-button.ghost { color: var(--muted); background: #efebe4; }
+    .action-button:active { transform: translateY(3px); box-shadow: none; }
+    .voice-picker { display: flex; align-items: center; gap: 10px; margin-top: 13px; padding: 11px 12px; background: #f1ede5; border-radius: 14px; }
+    .voice-picker label { flex: 0 0 auto; color: var(--navy); font-size: 12px; font-weight: 900; }
+    .voice-picker select { min-width: 0; flex: 1; min-height: 42px; padding: 0 10px; color: var(--navy); background: var(--surface); border: 1px solid #d6e0df; border-radius: 10px; font-size: 13px; font-weight: 750; }
+    .voice-picker select:disabled { color: #8a928f; opacity: 1; }
+    .voice-note { margin: 7px 2px 0; color: #8a928f; font-size: 11px; line-height: 1.4; }
+    .hint { margin: 13px 2px 0; color: #7c8588; font-size: 12px; line-height: 1.5; text-align: center; }
+    .listener-card { margin-top: 16px; padding: 15px; color: var(--navy); background: #edf5f1; border: 1px solid #cfe3d9; border-radius: 17px; }
+    .listener-head, .mission-head, .core-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .listener-head { margin-bottom: 8px; font-size: 12px; font-weight: 900; }
+    .listener-step { color: var(--coral-dark); font-size: 11px; }
+    .listener-prompt { margin: 0; color: #415c65; font-size: 14px; line-height: 1.55; font-weight: 750; }
+    .listener-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 11px; }
+    .listener-action { min-height: 40px; padding: 0 11px; color: var(--navy); background: var(--surface); border: 1px solid #c7dbd1; border-radius: 10px; font-size: 12px; font-weight: 850; cursor: pointer; }
+    .listener-action:hover { background: var(--mint); }
+    .mission-card { margin-bottom: 13px; padding: 16px 17px; color: var(--navy); background: var(--navy); border-radius: 17px; }
+    .mission-head { color: var(--yellow); font-size: 12px; font-weight: 900; }
+    .mission-reset { min-height: 31px; padding: 0 10px; color: var(--navy); background: var(--yellow); border: 0; border-radius: 9px; font-size: 11px; font-weight: 900; cursor: pointer; }
+    .mission-reset:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    .mission-location { margin: 10px 0 0; color: #a9d6c5; font-size: 11px; font-weight: 850; }
+    .mission-text { margin: 5px 0 0; color: white; font-size: 16px; line-height: 1.45; font-weight: 900; letter-spacing: -.04em; }
+    .mission-hint { margin: 5px 0 0; color: #c9d9de; font-size: 12px; line-height: 1.45; }
+    .core-toggle { width: 100%; min-height: 43px; margin-bottom: 13px; padding: 0 14px; display: flex; align-items: center; justify-content: space-between; color: var(--navy); background: #fff9e8; border: 1px solid #eedca8; border-radius: 13px; font-size: 13px; font-weight: 900; cursor: pointer; }
+    .core-toggle::after { content: '＋'; color: #9a7b2c; font-size: 18px; line-height: 1; }
+    .core-toggle[aria-expanded='true']::after { content: '−'; }
+    .core-toggle:hover { background: #fff4cf; }
+    .core-panel { margin-bottom: 16px; padding: 14px 15px 15px; background: #fff9e8; border: 1px solid #eedca8; border-radius: 17px; }
+    .core-head { margin-bottom: 10px; color: var(--navy); }
+    .core-head strong { font-size: 13px; }
+    .core-head small { color: #8d7851; font-size: 11px; font-weight: 750; }
+    .core-word-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; }
+    .core-word { min-height: 69px; padding: 7px 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: var(--navy); background: var(--surface); border: 1px solid #e6d9b6; border-radius: 11px; font-size: 12px; line-height: 1.18; font-weight: 850; text-align: center; cursor: pointer; }
+    .core-word:hover { background: var(--yellow); border-color: #ddb63e; }
+    .core-icon { display: grid; place-items: center; width: 29px; height: 29px; color: var(--navy); }
+    .core-icon svg { width: 25px; height: 25px; }
+    .show-panel[hidden] { display: none; }
+    .show-panel { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 24px; background: rgba(24, 53, 80, .92); }
+    .show-panel-inner { position: relative; width: min(760px, 100%); min-height: min(560px, 90vh); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 56px 28px 30px; text-align: center; background: var(--surface); border-radius: 28px; box-shadow: 0 24px 70px rgba(0,0,0,.25); }
+    .show-panel-label { color: var(--coral-dark); font-size: 13px; font-weight: 900; }
+    .show-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 23px 0 17px; }
+    .show-word { display: inline-flex; align-items: center; gap: 7px; padding: 9px 12px; color: var(--navy); background: #f3f7f5; border-radius: 12px; font-size: 14px; font-weight: 850; }
+    .show-word svg { width: 22px; height: 22px; }
+    .show-sentence { max-width: 650px; margin: 0; color: var(--navy); font-size: clamp(28px, 5vw, 52px); line-height: 1.25; font-weight: 950; letter-spacing: -.07em; word-break: keep-all; }
+    .show-note { margin: 20px 0 0; color: var(--muted); font-size: 13px; }
+    .close-show { position: absolute; top: 15px; right: 16px; width: 42px; height: 42px; color: var(--navy); background: #edf2f1; border: 0; border-radius: 50%; font-size: 25px; line-height: 1; cursor: pointer; }
+
+    .keyboard { padding: 22px; }
+    .keyboard-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 17px; }
+    .keyboard h2 { margin: 0; font-size: 21px; letter-spacing: -.055em; }
+    .keyboard-intro { margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .scenario-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .scenario-tab { min-height: 43px; padding: 0 13px; color: var(--muted); background: #f1ede5; border: 1px solid transparent; border-radius: 12px; font-size: 14px; font-weight: 850; cursor: pointer; }
+    .scenario-tab.active { color: var(--navy); background: var(--yellow); border-color: #e5b83e; }
+    .category-tabs { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 15px; scrollbar-width: thin; }
+    .category-tab { flex: 0 0 auto; min-height: 39px; padding: 0 12px; color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 11px; font-size: 13px; font-weight: 800; cursor: pointer; }
+    .category-tab.active { color: var(--navy); background: var(--mint); border-color: #a8d0c0; }
+    .keyword-grid { display: grid; grid-template-columns: repeat(4, minmax(100px, 1fr)); gap: 10px; }
+    .keyword-button {
+      position: relative; min-height: 132px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+      padding: 13px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 17px; text-align: center; cursor: pointer;
+      transition: transform .16s, border-color .16s, box-shadow .16s; overflow: hidden;
+    }
+    .keyword-button::after { content: ""; position: absolute; width: 63px; height: 63px; right: -15px; bottom: -15px; border-radius: 50%; background: var(--tile, var(--sky)); opacity: .52; }
+    .keyword-button:hover { transform: translateY(-3px); border-color: #a9c2c8; box-shadow: 0 8px 16px rgba(32, 52, 67, .09); }
+    .keyword-button:active { transform: scale(.97); }
+    .keyword-icon { position: relative; z-index: 1; display: grid; place-items: center; width: 47px; height: 47px; color: var(--navy); background: var(--tile, var(--sky)); border-radius: 14px; }
+    .keyword-icon svg { width: 29px; height: 29px; }
+    .keyword-label { position: relative; z-index: 1; width: 100%; font-size: 18px; line-height: 1.2; font-weight: 900; letter-spacing: -.055em; word-break: keep-all; }
+
+    .example-strip { display: flex; align-items: center; gap: 10px; margin-top: 17px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .example-label { flex: 0 0 auto; color: var(--muted); font-size: 12px; font-weight: 800; }
+    .example-button { min-height: 37px; padding: 0 11px; color: var(--navy-2); background: #f1ede5; border: 0; border-radius: 10px; font-size: 12px; font-weight: 800; cursor: pointer; }
+    .example-button:hover { background: var(--mint); }
+
+    .footer-note { padding: 0 0 42px; color: #8a928f; font-size: 12px; line-height: 1.7; text-align: center; }
+    .toast { position: fixed; left: 50%; bottom: 22px; z-index: 20; transform: translate(-50%, 20px); max-width: calc(100% - 28px); padding: 13px 17px; color: white; background: var(--navy); border-radius: 12px; box-shadow: var(--shadow); font-size: 14px; font-weight: 750; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
+    .toast.show { transform: translate(-50%, 0); opacity: 1; }
+    .speaking { animation: speak .85s ease-in-out infinite alternate; }
+    @keyframes speak { from { box-shadow: 0 7px 0 #d36150; } to { box-shadow: 0 7px 0 #d36150, 0 0 0 9px rgba(239,119,95,.18); } }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 20px; padding-top: 31px; }
+      .meaning-card { min-height: auto; }
+      .experience { grid-template-columns: 1fr; }
+      .composer { position: static; }
+      .sentence-box { min-height: 125px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 24px, 520px); }
+      .topbar { padding-top: 14px; }
+      .campaign-tag { font-size: 11px; padding: 8px 10px; }
+      .brand { font-size: 14px; }
+      .brand-mark { width: 34px; height: 34px; }
+      .hero { padding: 28px 0 20px; }
+      h1 { font-size: clamp(36px, 12vw, 52px); }
+      .hero-copy { font-size: 15px; }
+      .step-line { gap: 7px; font-size: 11px; }
+      .step-line .connector { flex-basis: 16px; }
+      .step-number { width: 22px; height: 22px; font-size: 11px; }
+      .experience { gap: 13px; padding-bottom: 27px; }
+      .composer, .keyboard { padding: 16px; border-radius: 20px; }
+      .keyboard-head { display: block; }
+      .scenario-tabs { margin-top: 14px; }
+      .scenario-tab { min-height: 40px; font-size: 13px; }
+      .keyword-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+      .keyword-button { min-height: 116px; gap: 8px; padding: 10px 7px; border-radius: 14px; }
+      .keyword-icon { width: 46px; height: 46px; border-radius: 12px; }
+      .keyword-icon svg { width: 28px; height: 28px; }
+      .keyword-label { font-size: 15px; }
+      .core-word-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+      .core-word { min-height: 66px; font-size: 11px; }
+      .core-icon { width: 26px; height: 26px; }
+      .core-icon svg { width: 23px; height: 23px; }
+      .voice-picker { display: block; }
+      .voice-picker select { width: 100%; margin-top: 8px; }
+      .voice-note { font-size: 10px; }
+      .example-strip { align-items: flex-start; flex-wrap: wrap; }
+      .example-label { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.8C4 4.8 4.8 4 5.8 4h12.4c1 0 1.8.8 1.8 1.8v7.4c0 1-.8 1.8-1.8 1.8H12l-4.2 4v-4H5.8c-1 0-1.8-.8-1.8-1.8V5.8Z"></path><path d="M8 9.5h8M8 12h4"></path></svg>
+      </span>
+      <span>나의 목소리</span>
+    </div>
+    <div class="campaign-tag">AAC 체험 캠페인</div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <span class="eyebrow">말을 표현하는 또 다른 방법</span>
+        <h1 id="page-title">내가 고른 말,<br><span style="color: var(--coral);">나의 목소리.</span></h1>
+        <p class="hero-copy">AAC는 말 대신 또는 말과 함께 사용할 수 있는 다양한 의사소통 방법이에요. 필요한 키워드를 골라 나만의 표현을 만들어 보세요.</p>
+        <div class="hero-note"><span class="mini-icon" aria-hidden="true">✦</span><span>정답은 없어요. 내가 전하고 싶은 말을 고르면 돼요.</span></div>
+      </div>
+      <aside class="meaning-card" aria-label="AAC 설명">
+        <div>
+          <h2>AAC가 무엇인가요?</h2>
+          <p>Augmentative and Alternative Communication의 줄임말로, 보완대체의사소통을 뜻해요. 그림, 몸짓, 글자, 기기 등 다양한 방법으로 마음을 전할 수 있습니다.</p>
+        </div>
+        <div class="meaning-pill">모두에게는 표현할 권리가 있어요</div>
+      </aside>
+    </section>
+
+    <div class="step-line" aria-label="체험 단계">
+      <div class="step"><span class="step-number">1</span><span>상황 고르기</span></div>
+      <span class="connector"></span>
+      <div class="step"><span class="step-number">2</span><span>키워드 조합하기</span></div>
+      <span class="connector"></span>
+      <div class="step"><span class="step-number">3</span><span>표현 전달하기</span></div>
+      <span class="connector"></span>
+      <div class="step"><span class="step-number">4</span><span>주고받기</span></div>
+    </div>
+
+    <section class="experience" aria-label="AAC 키워드 조합 체험">
+      <div class="card composer">
+        <div class="section-kicker"><span>내가 만든 표현</span><span class="live-dot">실시간</span></div>
+        <div id="sentenceBox" class="sentence-box" aria-live="polite" aria-label="선택한 키워드"><div class="sentence-placeholder">오른쪽 키워드를 눌러<br>표현을 만들어 보세요.</div></div>
+        <div class="voice-picker" aria-label="읽어줄 목소리 선택">
+          <label for="voiceSelect">목소리 선택</label>
+          <select id="voiceSelect" aria-describedby="voiceNote"><option value="">기기 기본 음성</option><option value="0">Microsoft Heami - Korean (Korean)</option><option value="1">Microsoft 선히 Online (Natural) - Korean (Korea) · 온라인</option><option value="2">Microsoft 인준 Online (Natural) - Korean (Korea) · 온라인</option><option value="3">Microsoft Hyunsu Multilingual Online (Natural) - Korean (Korea) · 온라인</option></select>
+        </div>
+        <p id="voiceNote" class="voice-note">사용 가능한 한국어 목소리는 태블릿마다 달라요.</p>
+        <div class="composer-actions">
+          <button id="speakButton" class="action-button primary" type="button" aria-label="선택한 표현 읽어주기">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"></path><path d="M15.5 9.5a3.7 3.7 0 0 1 0 5M18.5 7a7.3 7.3 0 0 1 0 10"></path></svg>
+            읽어주기
+          </button>
+          <button id="showButton" class="action-button secondary" type="button" aria-label="선택한 표현을 화면으로 보여주기">👀 화면으로 보여주기</button>
+          <button id="undoButton" class="action-button secondary" type="button">← 한 단어 삭제</button>
+          <button id="clearButton" class="action-button ghost" type="button">처음부터</button>
+        </div>
+        <p class="hint">완성된 키워드를 다시 누르면 그 단어만 삭제할 수 있어요.</p>
+        <div id="listenerCard" class="listener-card" aria-live="polite">
+          <div class="listener-head"><span>상대방과 주고받기</span><span id="listenerStep" class="listener-step">1단계 / 2</span></div>
+          <p id="listenerPrompt" class="listener-prompt">동행인: 무엇을 하고 싶어요?</p>
+          <div id="listenerActions" class="listener-actions">
+        <button class="listener-action" type="button" data-listener-action="0">내 표현 보여주기</button>
+      
+        <button class="listener-action" type="button" data-listener-action="1">읽어주기</button>
+      
+        <button class="listener-action" type="button" data-listener-action="2">천천히 말해 주세요</button>
+      </div>
+        </div>
+      </div>
+
+      <div class="card keyboard">
+        <div class="keyboard-head">
+          <div>
+            <h2>어떤 상황인가요?</h2>
+            <p class="keyboard-intro">상황을 고르고, 필요한 단어를 차례로 눌러 보세요.</p>
+          </div>
+          <div id="scenarioTabs" class="scenario-tabs" role="tablist" aria-label="상황 선택">
+        <button class="scenario-tab " type="button" role="tab" aria-selected="false" data-scenario="movie">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m8 5 3 14M16 5l-3 14M3 9h18M3 15h18"></path></svg> 영화관
+        </button>
+      
+        <button class="scenario-tab " type="button" role="tab" aria-selected="false" data-scenario="cafe">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h12v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V8ZM17 10h1a3 3 0 0 1 0 6h-1M8 4c0 1 1 1 1 2M12 4c0 1 1 1 1 2"></path></svg> 카페
+        </button>
+      
+        <button class="scenario-tab " type="button" role="tab" aria-selected="false" data-scenario="store">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v9h16v-9M3 10l2-5h14l2 5M3 10c0 1.4 1.2 2.5 2.7 2.5S8.5 11.4 8.5 10c0 1.4 1.2 2.5 2.7 2.5s2.7-1.1 2.7-2.5c0 1.4 1.2 2.5 2.7 2.5s2.7-1.1 2.7-2.5"></path><path d="M8 19v-4h4v4"></path></svg> 편의점
+        </button>
+      
+        <button class="scenario-tab " type="button" role="tab" aria-selected="false" data-scenario="hospital">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V5h14v16M8 5V3h8v2M8 14h8M12 10v8M9 13h6"></path></svg> 병원
+        </button>
+      
+        <button class="scenario-tab active" type="button" role="tab" aria-selected="true" data-scenario="park">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V9M12 12 7 7m5 5 5-5M4 21h16"></path><path d="M6 12l-2 3h4l-2 3M18 12l-2 3h4l-2 3"></path></svg> 공원
+        </button>
+      </div>
+        </div>
+        <div id="missionCard" class="mission-card" aria-live="polite">
+          <div class="mission-head"><span>체험 미션</span><button id="resetMissionButton" class="mission-reset" type="button">↻ 다른 미션</button></div>
+          <p id="missionLocation" class="mission-location">현재 장소 · 공원</p>
+          <p id="missionText" class="mission-text">산책 중 물을 마시고 싶다고 표현해 보세요.</p>
+          <p id="missionHint" class="mission-hint">물 · 1병 · 주세요를 조합해 보세요.</p>
+        </div>
+        <button id="toggleCoreButton" class="core-toggle" type="button" aria-expanded="false" aria-controls="corePanel">항상 사용하는 말 보기</button>
+        <div id="corePanel" class="core-panel" hidden="">
+          <div class="core-head"><strong>항상 사용하는 말</strong><small>상황이 바뀌어도 사용할 수 있어요</small></div>
+          <div id="coreWords" class="core-word-grid" aria-label="항상 사용하는 핵심 표현">
+        <button class="core-word" type="button" data-core-label="네" style="background:#cfe7dd" aria-label="네 핵심 표현">
+          <span class="core-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg></span>
+          <span>네</span>
+        </button>
+      
+        <button class="core-word" type="button" data-core-label="아니요" style="background:#dceaf3" aria-label="아니요 핵심 표현">
+          <span class="core-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"></path></svg></span>
+          <span>아니요</span>
+        </button>
+      
+        <button class="core-word" type="button" data-core-label="좋아요" style="background:#f4dfb5" aria-label="좋아요 핵심 표현">
+          <span class="core-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 14s1.3 2 4 2 4-2 4-2M9 9h.01M15 9h.01"></path></svg></span>
+          <span>좋아요</span>
+        </button>
+      
+        <button class="core-word" type="button" data-core-label="싫어요" style="background:#e8e0f1" aria-label="싫어요 핵심 표현">
+          <span class="core-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 16s1.3-2 4-2 4 2 4 2M9 9h.01M15 9h.01"></path></svg></span>
+          <span>싫어요</span>
+        </button>
+      
+        <button class="core-word" type="button" data-core-label="더" style="background:#cfe7dd" aria-label="더 핵심 표현">
+          <span class="core-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="18" cy="12" r="1"></circle></svg></span>
+          <span>더</span>
+        </button>
+      
+        <button class="core-word" type="button" data-core-label="그만" style="background:#e8e0f1" aria-label="그만 핵심 표현">
+          <span class="core-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"></path></svg></span>
+          <span>그만</span>
+        </button>
+      
+        <button class="core-word" type="button" data-core-label="도와주세요" style="background:#dceaf3" aria-label="도와주세요 핵심 표현">
+          <span class="core-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.6 2.6 0 1 1 4.1 2.1c-.9.6-1.6 1.1-1.6 2.4M12 16.8h.01"></path></svg></span>
+          <span>도와주세요</span>
+        </button>
+      
+        <button class="core-word" type="button" data-core-label="다시 말해 주세요" style="background:#f4dfb5" aria-label="다시 말해 주세요 핵심 표현">
+          <span class="core-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.6 2.6 0 1 1 4.1 2.1c-.9.6-1.6 1.1-1.6 2.4M12 16.8h.01"></path></svg></span>
+          <span>다시 말해 주세요</span>
+        </button>
+      
+        <button class="core-word" type="button" data-core-label="기다려 주세요" style="background:#cfe7dd" aria-label="기다려 주세요 핵심 표현">
+          <span class="core-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+          <span>기다려 주세요</span>
+        </button>
+      
+        <button class="core-word" type="button" data-core-label="잘 모르겠어요" style="background:#e8e0f1" aria-label="잘 모르겠어요 핵심 표현">
+          <span class="core-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.6 2.6 0 1 1 4.1 2.1c-.9.6-1.6 1.1-1.6 2.4M12 16.8h.01"></path></svg></span>
+          <span>잘 모르겠어요</span>
+        </button>
+      </div>
+        </div>
+        <div id="categoryTabs" class="category-tabs" role="tablist" aria-label="키워드 종류">
+        <button class="category-tab active" type="button" role="tab" aria-selected="true" data-category="핵심 표현">핵심 표현</button>
+      
+        <button class="category-tab " type="button" role="tab" aria-selected="false" data-category="대상">대상</button>
+      
+        <button class="category-tab " type="button" role="tab" aria-selected="false" data-category="표현">표현</button>
+      
+        <button class="category-tab " type="button" role="tab" aria-selected="false" data-category="느낌">느낌</button>
+      </div>
+        <div id="keywordGrid" class="keyword-grid" aria-label="키워드 선택">
+        <button class="keyword-button" type="button" data-label="산책" style="--tile:#cfe7dd" aria-label="산책">
+          <span class="keyword-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="5" r="2"></circle><path d="m12 8-2 5 3 2 2 5M10 13l-4 4M13 15l4-3M9 21h4"></path></svg></span>
+          <span class="keyword-label">산책</span>
+        </button>
+      
+        <button class="keyword-button" type="button" data-label="쉬고 싶어요" style="--tile:#f4dfb5" aria-label="쉬고 싶어요">
+          <span class="keyword-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14v4H5zM7 15v5M17 15v5M4 20h16"></path></svg></span>
+          <span class="keyword-label">쉬고 싶어요</span>
+        </button>
+      
+        <button class="keyword-button" type="button" data-label="물" style="--tile:#dceaf3" aria-label="물">
+          <span class="keyword-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v15H8zM8 8h8M10 12h4"></path></svg></span>
+          <span class="keyword-label">물</span>
+        </button>
+      
+        <button class="keyword-button" type="button" data-label="1병" style="--tile:#e8e0f1" aria-label="1병">
+          <span class="keyword-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7.5 12 5v14M8 19h8"></path></svg></span>
+          <span class="keyword-label">1병</span>
+        </button>
+      
+        <button class="keyword-button" type="button" data-label="화장실" style="--tile:#cfe7dd" aria-label="화장실">
+          <span class="keyword-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v9h16v-9M3 10l2-5h14l2 5M3 10c0 1.4 1.2 2.5 2.7 2.5S8.5 11.4 8.5 10c0 1.4 1.2 2.5 2.7 2.5s2.7-1.1 2.7-2.5c0 1.4 1.2 2.5 2.7 2.5s2.7-1.1 2.7-2.5"></path><path d="M8 19v-4h4v4"></path></svg></span>
+          <span class="keyword-label">화장실</span>
+        </button>
+      
+        <button class="keyword-button" type="button" data-label="친구" style="--tile:#dceaf3" aria-label="친구">
+          <span class="keyword-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"></circle><path d="M6 21v-2a6 6 0 0 1 12 0v2"></path></svg></span>
+          <span class="keyword-label">친구</span>
+        </button>
+      
+        <button class="keyword-button" type="button" data-label="집에 가고 싶어요" style="--tile:#e8e0f1" aria-label="집에 가고 싶어요">
+          <span class="keyword-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8.8c0 5-8 9.3-8 9.3s-8-4.3-8-9.3A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 8 1.8Z"></path></svg></span>
+          <span class="keyword-label">집에 가고 싶어요</span>
+        </button>
+      </div>
+        <div class="example-strip">
+          <span class="example-label">빠른 예시</span>
+          <div id="exampleButtons" style="display:flex; gap:7px; flex-wrap:wrap;">
+        <button class="example-button" type="button" data-example="0">산책하고 싶어요</button>
+      
+        <button class="example-button" type="button" data-example="1">물을 마시고 싶어요</button>
+      </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">이 체험은 AAC를 이해하기 위한 캠페인용 예시입니다.<br>사람마다 편안하고 효과적인 의사소통 방법은 다를 수 있어요.</p>
+  </main>
+  <div id="showPanel" class="show-panel" role="dialog" aria-modal="true" aria-labelledby="showSentence" hidden="">
+    <div class="show-panel-inner">
+      <button id="closeShowButton" class="close-show" type="button" aria-label="화면 닫기">×</button>
+      <div class="show-panel-label">화면으로 보여주기</div>
+      <div id="showWords" class="show-words" aria-hidden="true"></div>
+      <p id="showSentence" class="show-sentence"></p>
+      <p class="show-note">내가 전하고 싶은 말이에요.</p>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const iconPaths = {
+      movie: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m8 5 3 14M16 5l-3 14M3 9h18M3 15h18"/>',
+      ticket: '<path d="M4 6h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4V6Z"/><path d="M12 8v8"/>',
+      one: '<path d="M9 7.5 12 5v14M8 19h8"/>',
+      please: '<path d="M7 11V5.8a1.7 1.7 0 0 1 3.4 0V10m0-1.2V4.9a1.7 1.7 0 0 1 3.4 0V10m0-1.1V6.4a1.7 1.7 0 0 1 3.4 0V14c0 4-2.5 5.5-6.1 5.5h-.9c-2.3 0-3.7-1-4.7-2.7L3.8 14a1.7 1.7 0 0 1 2.9-1.7L7 13"/>',
+      coffee: '<path d="M5 8h12v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V8ZM17 10h1a3 3 0 0 1 0 6h-1M8 4c0 1 1 1 1 2M12 4c0 1 1 1 1 2"/>',
+      water: '<path d="M8 4h8v15H8zM8 8h8M10 12h4"/>',
+      menu: '<path d="M5 6h14M5 12h14M5 18h14"/>',
+      hot: '<path d="M6 9h12v7a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V9ZM9 5c0 1-1 1-1 2M13 4c0 1-1 1-1 2M17 5c0 1-1 1-1 2"/>',
+      bread: '<path d="M4 10c0-3 3-5 8-5s8 2 8 5v7H4v-7Z"/><path d="M4 14h16M8 10h.01M12 9h.01M16 11h.01"/>',
+      store: '<path d="M4 10v9h16v-9M3 10l2-5h14l2 5M3 10c0 1.4 1.2 2.5 2.7 2.5S8.5 11.4 8.5 10c0 1.4 1.2 2.5 2.7 2.5s2.7-1.1 2.7-2.5c0 1.4 1.2 2.5 2.7 2.5s2.7-1.1 2.7-2.5"/><path d="M8 19v-4h4v4"/>',
+      snack: '<path d="M5 8h14l-1 11H6L5 8ZM4 8h16M8 5h8l1 3H7l1-3ZM9 12h6"/>',
+      price: '<circle cx="12" cy="12" r="8"/><path d="M12 7v10M15 9.5c-.7-.8-1.6-1.2-3-1.2-1.5 0-2.5.7-2.5 1.8 0 2.6 5.5 1.1 5.5 3.8 0 1.2-1 1.9-2.7 1.9-1.4 0-2.4-.4-3.1-1.2"/>',
+      help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.6 2.6 0 1 1 4.1 2.1c-.9.6-1.6 1.1-1.6 2.4M12 16.8h.01"/>',
+      yes: '<path d="m5 12 4 4L19 6"/>',
+      no: '<path d="m7 7 10 10M17 7 7 17"/>',
+      thanks: '<path d="M8 11V6a1.5 1.5 0 0 1 3 0v4m0-1V4.8a1.5 1.5 0 0 1 3 0V10m0-1V6.5a1.5 1.5 0 0 1 3 0v7c0 3.5-2.2 5-5.5 5H10c-2.2 0-3.2-1.1-4.2-2.7L4 13.5a1.6 1.6 0 0 1 2.7-1.7L8 13"/>',
+      happy: '<circle cx="12" cy="12" r="9"/><path d="M8 14s1.3 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>',
+      sad: '<circle cx="12" cy="12" r="9"/><path d="M8 16s1.3-2 4-2 4 2 4 2M9 9h.01M15 9h.01"/>',
+      quiet: '<path d="M5 10h4l5-4v12l-5-4H5zM17 10l3 3m0-3-3 3"/>',
+      wait: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+      heart: '<path d="M20 8.8c0 5-8 9.3-8 9.3s-8-4.3-8-9.3A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 8 1.8Z"/>',
+      hospital: '<path d="M5 21V5h14v16M8 5V3h8v2M8 14h8M12 10v8M9 13h6"/>',
+      doctor: '<circle cx="12" cy="7" r="3"/><path d="M6 21v-2a6 6 0 0 1 12 0v2M9 13h6M12 10v6"/>',
+      park: '<path d="M12 21V9M12 12 7 7m5 5 5-5M4 21h16"/><path d="M6 12l-2 3h4l-2 3M18 12l-2 3h4l-2 3"/>',
+      walk: '<circle cx="13" cy="5" r="2"/><path d="m12 8-2 5 3 2 2 5M10 13l-4 4M13 15l4-3M9 21h4"/>',
+      bench: '<path d="M5 11h14v4H5zM7 15v5M17 15v5M4 20h16"/>',
+      seat: '<path d="M7 12V6a2 2 0 0 1 4 0v4h2V6a2 2 0 0 1 4 0v6M6 12h12v4H6zM8 16v4M16 16v4"/>',
+      medicine: '<path d="M7 4h10v16H7zM9 8h6M9 12h6M9 16h4"/>',
+      sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+      person: '<circle cx="12" cy="7" r="3"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/>',
+      caption: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 12h4M13 12h4M7 16h10"/>',
+      more: '<circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/>'
+    };
+
+    const icon = (name) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${iconPaths[name] || iconPaths.more}</svg>`;
+
+    const data = {
+      movie: {
+        label: '영화관', icon: 'movie',
+        examples: [
+          { label: '표를 사고 싶어요', words: ['영화표', '1장', '주세요'] },
+          { label: '도와주세요', words: ['도와주세요'] }
+        ],
+        categories: {
+          '핵심 표현': [
+            ['영화표', 'ticket', '대상', '#dceaf3'], ['1장', 'one', '수량', '#f4dfb5'], ['주세요', 'please', '표현', '#cfe7dd'], ['도와주세요', 'help', '표현', '#e8e0f1'], ['좌석', 'seat', '대상', '#e8e0f1'], ['자막', 'caption', '대상', '#dceaf3'], ['팝콘', 'snack', '대상', '#f4dfb5']
+          ],
+          '대상': [
+            ['영화표', 'ticket', '대상', '#dceaf3'], ['영화', 'movie', '대상', '#dceaf3'], ['팝콘', 'snack', '대상', '#f4dfb5'], ['화장실', 'store', '장소', '#cfe7dd']
+          ],
+          '표현': [
+            ['주세요', 'please', '표현', '#cfe7dd'], ['도와주세요', 'help', '표현', '#e8e0f1'], ['감사합니다', 'thanks', '표현', '#f4dfb5'], ['기다려 주세요', 'wait', '표현', '#dceaf3']
+          ],
+          '느낌': [
+            ['좋아요', 'happy', '느낌', '#f4dfb5'], ['싫어요', 'sad', '느낌', '#e8e0f1'], ['네', 'yes', '대답', '#cfe7dd'], ['아니요', 'no', '대답', '#dceaf3']
+          ]
+        }
+      },
+      cafe: {
+        label: '카페', icon: 'coffee',
+        examples: [
+          { label: '물을 주세요', words: ['물', '1잔', '주세요'] },
+          { label: '메뉴를 보고 싶어요', words: ['메뉴', '보고 싶어요'] }
+        ],
+        categories: {
+          '핵심 표현': [
+            ['물', 'water', '대상', '#dceaf3'], ['1잔', 'one', '수량', '#f4dfb5'], ['주세요', 'please', '표현', '#cfe7dd'], ['감사합니다', 'thanks', '표현', '#e8e0f1'], ['차가워요', 'water', '느낌', '#dceaf3'], ['설탕', 'more', '대상', '#f4dfb5'], ['포장', 'bread', '행동', '#cfe7dd']
+          ],
+          '대상': [
+            ['물', 'water', '대상', '#dceaf3'], ['커피', 'coffee', '대상', '#f4dfb5'], ['메뉴', 'menu', '대상', '#cfe7dd'], ['빵', 'bread', '대상', '#e8e0f1']
+          ],
+          '수량': [
+            ['1잔', 'one', '수량', '#f4dfb5'], ['2잔', 'one', '수량', '#f4dfb5'], ['조금', 'more', '수량', '#dceaf3'], ['많이', 'more', '수량', '#cfe7dd']
+          ],
+          '표현': [
+            ['주세요', 'please', '표현', '#cfe7dd'], ['메뉴 보고 싶어요', 'menu', '표현', '#dceaf3'], ['도와주세요', 'help', '표현', '#e8e0f1'], ['감사합니다', 'thanks', '표현', '#f4dfb5']
+          ]
+        }
+      },
+      store: {
+        label: '편의점', icon: 'store',
+        examples: [
+          { label: '과자를 주세요', words: ['과자', '1개', '주세요'] },
+          { label: '가격을 물어봐요', words: ['가격', '얼마예요'] }
+        ],
+        categories: {
+          '핵심 표현': [
+            ['과자', 'snack', '대상', '#f4dfb5'], ['1개', 'one', '수량', '#dceaf3'], ['주세요', 'please', '표현', '#cfe7dd'], ['얼마예요', 'price', '표현', '#e8e0f1'], ['카드', 'price', '대상', '#dceaf3'], ['영수증', 'ticket', '대상', '#e8e0f1'], ['계산할게요', 'yes', '행동', '#cfe7dd']
+          ],
+          '대상': [
+            ['과자', 'snack', '대상', '#f4dfb5'], ['물', 'water', '대상', '#dceaf3'], ['빵', 'bread', '대상', '#e8e0f1'], ['봉투', 'store', '대상', '#cfe7dd']
+          ],
+          '수량': [
+            ['1개', 'one', '수량', '#dceaf3'], ['2개', 'one', '수량', '#f4dfb5'], ['조금', 'more', '수량', '#cfe7dd'], ['많이', 'more', '수량', '#e8e0f1']
+          ],
+          '표현': [
+            ['주세요', 'please', '표현', '#cfe7dd'], ['얼마예요', 'price', '표현', '#e8e0f1'], ['도와주세요', 'help', '표현', '#dceaf3'], ['감사합니다', 'thanks', '표현', '#f4dfb5']
+          ]
+        }
+      },
+      hospital: {
+        label: '병원', icon: 'hospital',
+        examples: [
+          { label: '진료를 받고 싶어요', words: ['진료', '받고 싶어요'] },
+          { label: '배가 아파요', words: ['배', '아파요'] }
+        ],
+        categories: {
+          '핵심 표현': [
+            ['진료', 'doctor', '행동', '#dceaf3'], ['아파요', 'sad', '느낌', '#e8e0f1'], ['의사', 'doctor', '사람', '#cfe7dd'], ['약', 'medicine', '대상', '#f4dfb5'], ['도와주세요', 'help', '표현', '#e8e0f1'], ['기다려 주세요', 'wait', '표현', '#dceaf3'], ['감사합니다', 'thanks', '표현', '#f4dfb5']
+          ],
+          '대상': [
+            ['약', 'medicine', '대상', '#f4dfb5'], ['물', 'water', '대상', '#dceaf3'], ['주사', 'more', '대상', '#e8e0f1'], ['화장실', 'store', '장소', '#cfe7dd']
+          ],
+          '느낌': [
+            ['아파요', 'sad', '느낌', '#e8e0f1'], ['괜찮아요', 'happy', '느낌', '#cfe7dd'], ['무서워요', 'quiet', '느낌', '#f4dfb5'], ['네', 'yes', '대답', '#dceaf3'], ['아니요', 'no', '대답', '#e8e0f1']
+          ],
+          '표현': [
+            ['진료 받고 싶어요', 'doctor', '표현', '#dceaf3'], ['도와주세요', 'help', '표현', '#e8e0f1'], ['기다려 주세요', 'wait', '표현', '#cfe7dd'], ['감사합니다', 'thanks', '표현', '#f4dfb5']
+          ]
+        }
+      },
+      park: {
+        label: '공원', icon: 'park',
+        examples: [
+          { label: '산책하고 싶어요', words: ['산책', '하고 싶어요'] },
+          { label: '물을 마시고 싶어요', words: ['물', '1병', '주세요'] }
+        ],
+        categories: {
+          '핵심 표현': [
+            ['산책', 'walk', '행동', '#cfe7dd'], ['쉬고 싶어요', 'bench', '행동', '#f4dfb5'], ['물', 'water', '대상', '#dceaf3'], ['1병', 'one', '수량', '#e8e0f1'], ['화장실', 'store', '장소', '#cfe7dd'], ['친구', 'person', '사람', '#dceaf3'], ['집에 가고 싶어요', 'heart', '표현', '#e8e0f1']
+          ],
+          '대상': [
+            ['물', 'water', '대상', '#dceaf3'], ['벤치', 'bench', '대상', '#f4dfb5'], ['공', 'more', '대상', '#e8e0f1'], ['나무', 'park', '대상', '#cfe7dd']
+          ],
+          '표현': [
+            ['산책하고 싶어요', 'walk', '표현', '#cfe7dd'], ['쉬고 싶어요', 'bench', '표현', '#f4dfb5'], ['집에 가고 싶어요', 'heart', '표현', '#e8e0f1'], ['도와주세요', 'help', '표현', '#dceaf3']
+          ],
+          '느낌': [
+            ['좋아요', 'happy', '느낌', '#f4dfb5'], ['더워요', 'sun', '느낌', '#e8e0f1'], ['조용히 해 주세요', 'quiet', '표현', '#dceaf3'], ['네', 'yes', '대답', '#cfe7dd'], ['아니요', 'no', '대답', '#e8e0f1']
+          ]
+        }
+      }
+    };
+
+    const coreWords = [
+      ['네', 'yes', '#cfe7dd'], ['아니요', 'no', '#dceaf3'], ['좋아요', 'happy', '#f4dfb5'], ['싫어요', 'sad', '#e8e0f1'], ['더', 'more', '#cfe7dd'],
+      ['그만', 'no', '#e8e0f1'], ['도와주세요', 'help', '#dceaf3'], ['다시 말해 주세요', 'help', '#f4dfb5'], ['기다려 주세요', 'wait', '#cfe7dd'], ['잘 모르겠어요', 'help', '#e8e0f1']
+    ];
+
+    const experienceData = {
+      movie: {
+        mission: '영화관에서 자막이 있는 영화를 보고 싶다고 표현해 보세요.',
+        hint: '자막 · 영화표 · 1장 · 주세요를 조합해 보세요.',
+        listener: [
+          { prompt: '직원: 어떤 영화를 원하세요?', actions: [
+            { label: '내 표현 보여주기', action: 'show' }, { label: '읽어주기', action: 'speak' }, { label: '다시 말해 주세요', action: 'add', words: ['다시 말해 주세요'] }
+          ] },
+          { prompt: '직원: 자막이 있는 영화군요. 좌석을 선택할까요?', actions: [
+            { label: '네', action: 'add', words: ['네'] }, { label: '아니요', action: 'add', words: ['아니요'] }, { label: '기다려 주세요', action: 'add', words: ['기다려 주세요'] }
+          ] }
+        ]
+      },
+      cafe: {
+        mission: '카페에서 원하는 음료를 주문하고, 원하는 방식을 표현해 보세요.',
+        hint: '커피 · 차가워요 · 1잔 · 주세요처럼 조합해 보세요.',
+        listener: [
+          { prompt: '직원: 어떤 음료를 원하세요?', actions: [
+            { label: '내 표현 보여주기', action: 'show' }, { label: '읽어주기', action: 'speak' }, { label: '천천히 말해 주세요', action: 'add', words: ['천천히 말해 주세요'] }
+          ] },
+          { prompt: '직원: 포장해 드릴까요?', actions: [
+            { label: '네', action: 'add', words: ['네'] }, { label: '아니요', action: 'add', words: ['아니요'] }, { label: '다른 것으로 주세요', action: 'add', words: ['다른 것으로 주세요'] }
+          ] }
+        ]
+      },
+      store: {
+        mission: '편의점에서 사고 싶은 물건과 결제 방법을 표현해 보세요.',
+        hint: '물 · 1개 · 주세요 · 카드처럼 조합해 보세요.',
+        listener: [
+          { prompt: '직원: 무엇을 찾으세요?', actions: [
+            { label: '내 표현 보여주기', action: 'show' }, { label: '읽어주기', action: 'speak' }, { label: '도와주세요', action: 'add', words: ['도와주세요'] }
+          ] },
+          { prompt: '직원: 카드로 계산할까요?', actions: [
+            { label: '네', action: 'add', words: ['네'] }, { label: '아니요', action: 'add', words: ['아니요'] }, { label: '다시 말해 주세요', action: 'add', words: ['다시 말해 주세요'] }
+          ] }
+        ]
+      },
+      hospital: {
+        mission: '병원에서 어디가 아픈지, 어떤 도움이 필요한지 표현해 보세요.',
+        hint: '배 · 아파요 · 많이 · 도와주세요처럼 조합해 보세요.',
+        listener: [
+          { prompt: '의료진: 어디가 불편하세요?', actions: [
+            { label: '내 표현 보여주기', action: 'show' }, { label: '읽어주기', action: 'speak' }, { label: '다시 말해 주세요', action: 'add', words: ['다시 말해 주세요'] }
+          ] },
+          { prompt: '의료진: 더 필요한 도움이 있나요?', actions: [
+            { label: '도와주세요', action: 'add', words: ['도와주세요'] }, { label: '괜찮아요', action: 'add', words: ['괜찮아요'] }, { label: '기다려 주세요', action: 'add', words: ['기다려 주세요'] }
+          ] }
+        ]
+      },
+      park: {
+        mission: '공원에서 하고 싶은 활동과 쉬고 싶은 순간을 표현해 보세요.',
+        hint: '산책 · 하고 싶어요 · 쉬고 싶어요를 조합해 보세요.',
+        listener: [
+          { prompt: '동행인: 무엇을 하고 싶어요?', actions: [
+            { label: '내 표현 보여주기', action: 'show' }, { label: '읽어주기', action: 'speak' }, { label: '천천히 말해 주세요', action: 'add', words: ['천천히 말해 주세요'] }
+          ] },
+          { prompt: '동행인: 잠깐 쉴까요?', actions: [
+            { label: '네', action: 'add', words: ['네'] }, { label: '아니요', action: 'add', words: ['아니요'] }, { label: '쉬고 싶어요', action: 'add', words: ['쉬고 싶어요'] }
+          ] }
+        ]
+      }
+    };
+
+    const missionPool = [
+      { id: 'movie-subtitle', scenario: 'movie', mission: '영화관에서 자막이 있는 영화를 보고 싶다고 표현해 보세요.', hint: '자막 · 영화표 · 1장 · 주세요를 조합해 보세요.' },
+      { id: 'movie-snack', scenario: 'movie', mission: '영화표와 팝콘을 요청해 보세요.', hint: '영화표 · 1장 · 팝콘 · 주세요를 조합해 보세요.' },
+      { id: 'cafe-order', scenario: 'cafe', mission: '카페에서 원하는 음료를 주문하고, 원하는 방식을 표현해 보세요.', hint: '커피 · 차가워요 · 1잔 · 주세요처럼 조합해 보세요.' },
+      { id: 'cafe-takeout', scenario: 'cafe', mission: '차가운 음료를 포장해 달라고 표현해 보세요.', hint: '커피 · 차가워요 · 포장 · 주세요를 조합해 보세요.' },
+      { id: 'store-payment', scenario: 'store', mission: '편의점에서 사고 싶은 물건과 결제 방법을 표현해 보세요.', hint: '물 · 1개 · 주세요 · 카드처럼 조합해 보세요.' },
+      { id: 'store-receipt', scenario: 'store', mission: '가격을 묻고 영수증을 요청해 보세요.', hint: '가격 · 알고 싶어요 · 영수증 · 주세요를 조합해 보세요.' },
+      { id: 'hospital-help', scenario: 'hospital', mission: '병원에서 어디가 아픈지, 어떤 도움이 필요한지 표현해 보세요.', hint: '배 · 아파요 · 많이 · 도와주세요처럼 조합해 보세요.' },
+      { id: 'hospital-wait', scenario: 'hospital', mission: '진료를 기다리는 동안 필요한 것을 표현해 보세요.', hint: '기다려 주세요 · 물 · 도와주세요를 조합해 보세요.' },
+      { id: 'park-rest', scenario: 'park', mission: '공원에서 하고 싶은 활동과 쉬고 싶은 순간을 표현해 보세요.', hint: '산책 · 하고 싶어요 · 쉬고 싶어요를 조합해 보세요.' },
+      { id: 'park-water', scenario: 'park', mission: '산책 중 물을 마시고 싶다고 표현해 보세요.', hint: '물 · 1병 · 주세요를 조합해 보세요.' }
+    ];
+
+    let activeMission = missionPool[Math.floor(Math.random() * missionPool.length)];
+    let activeScenario = activeMission.scenario;
+    let activeCategory = '핵심 표현';
+    let selectedWords = [];
+    let availableVoices = [];
+    let selectedVoiceURI = '';
+    let listenerIndex = 0;
+    let toastTimer;
+
+    const scenarioTabs = document.querySelector('#scenarioTabs');
+    const categoryTabs = document.querySelector('#categoryTabs');
+    const keywordGrid = document.querySelector('#keywordGrid');
+    const exampleButtons = document.querySelector('#exampleButtons');
+    const sentenceBox = document.querySelector('#sentenceBox');
+    const speakButton = document.querySelector('#speakButton');
+    const undoButton = document.querySelector('#undoButton');
+    const clearButton = document.querySelector('#clearButton');
+    const showButton = document.querySelector('#showButton');
+    const voiceSelect = document.querySelector('#voiceSelect');
+    const listenerStep = document.querySelector('#listenerStep');
+    const listenerPrompt = document.querySelector('#listenerPrompt');
+    const listenerActions = document.querySelector('#listenerActions');
+    const missionLocation = document.querySelector('#missionLocation');
+    const missionText = document.querySelector('#missionText');
+    const missionHint = document.querySelector('#missionHint');
+    const resetMissionButton = document.querySelector('#resetMissionButton');
+    const toggleCoreButton = document.querySelector('#toggleCoreButton');
+    const corePanel = document.querySelector('#corePanel');
+    const coreWordsElement = document.querySelector('#coreWords');
+    const showPanel = document.querySelector('#showPanel');
+    const showWords = document.querySelector('#showWords');
+    const showSentence = document.querySelector('#showSentence');
+    const closeShowButton = document.querySelector('#closeShowButton');
+    const toast = document.querySelector('#toast');
+
+    function renderVoices() {
+      if (!('speechSynthesis' in window)) {
+        voiceSelect.disabled = true;
+        voiceSelect.innerHTML = '<option value="">이 브라우저는 음성 기능을 지원하지 않아요</option>';
+        return;
+      }
+      availableVoices = window.speechSynthesis.getVoices().filter(voice => voice.lang && voice.lang.toLowerCase().startsWith('ko'));
+      if (!availableVoices.length) {
+        voiceSelect.innerHTML = '<option value="">기기 기본 음성 (추가 음성 없음)</option>';
+        voiceSelect.value = '';
+        return;
+      }
+      voiceSelect.innerHTML = ['<option value="">기기 기본 음성</option>', ...availableVoices.map((voice, index) => {
+        const serviceLabel = voice.localService ? '' : ' · 온라인';
+        return `<option value="${index}">${escapeHtml(voice.name)}${serviceLabel}</option>`;
+      })].join('');
+      const selectedIndex = availableVoices.findIndex(voice => voice.voiceURI === selectedVoiceURI);
+      voiceSelect.value = selectedIndex >= 0 ? String(selectedIndex) : '';
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2300);
+    }
+
+    function renderScenarios() {
+      scenarioTabs.innerHTML = Object.entries(data).map(([key, item]) => `
+        <button class="scenario-tab ${key === activeScenario ? 'active' : ''}" type="button" role="tab" aria-selected="${key === activeScenario}" data-scenario="${key}">
+          ${icon(item.icon)} ${item.label}
+        </button>
+      `).join('');
+      scenarioTabs.querySelectorAll('[data-scenario]').forEach(button => button.addEventListener('click', () => {
+        activeScenario = button.dataset.scenario;
+        activeMission = { id: `manual-${activeScenario}`, scenario: activeScenario, mission: experienceData[activeScenario].mission, hint: experienceData[activeScenario].hint };
+        activeCategory = '핵심 표현';
+        selectedWords = [];
+        listenerIndex = 0;
+        renderAll();
+        showToast(`${data[activeScenario].label} 상황을 골랐어요`);
+      }));
+    }
+
+    function renderMission() {
+      missionLocation.textContent = `현재 장소 · ${data[activeMission.scenario].label}`;
+      missionText.textContent = activeMission.mission;
+      missionHint.textContent = activeMission.hint;
+    }
+
+    function renderCoreWords() {
+      coreWordsElement.innerHTML = coreWords.map(([label, iconName, color]) => `
+        <button class="core-word" type="button" data-core-label="${escapeHtml(label)}" style="background:${color}" aria-label="${escapeHtml(label)} 핵심 표현">
+          <span class="core-icon" aria-hidden="true">${icon(iconName)}</span>
+          <span>${escapeHtml(label)}</span>
+        </button>
+      `).join('');
+      coreWordsElement.querySelectorAll('[data-core-label]').forEach(button => button.addEventListener('click', () => addWord(button.dataset.coreLabel)));
+    }
+
+    function renderListener() {
+      const steps = experienceData[activeScenario].listener;
+      if (listenerIndex >= steps.length) {
+        listenerStep.textContent = '완료';
+        listenerPrompt.textContent = '의사소통을 이어갔어요. 상대방이 기다리고 확인하는 것도 중요한 AAC 경험입니다.';
+        listenerActions.innerHTML = '<button class="listener-action" type="button" data-listener-reset="true">미션 다시 해보기</button>';
+        listenerActions.querySelector('[data-listener-reset]').addEventListener('click', () => {
+          listenerIndex = 0;
+          renderListener();
+        });
+        return;
+      }
+      const step = steps[listenerIndex];
+      listenerStep.textContent = `${listenerIndex + 1}단계 / ${steps.length}`;
+      listenerPrompt.textContent = step.prompt;
+      listenerActions.innerHTML = step.actions.map((action, index) => `
+        <button class="listener-action" type="button" data-listener-action="${index}">${escapeHtml(action.label)}</button>
+      `).join('');
+      listenerActions.querySelectorAll('[data-listener-action]').forEach(button => button.addEventListener('click', () => handleListenerAction(step.actions[Number(button.dataset.listenerAction)])));
+    }
+
+    function resetMission() {
+      const candidates = missionPool.filter(mission => mission.id !== activeMission.id);
+      activeMission = candidates[Math.floor(Math.random() * candidates.length)];
+      activeScenario = activeMission.scenario;
+      activeCategory = '핵심 표현';
+      selectedWords = [];
+      listenerIndex = 0;
+      setCoreOpen(false);
+      renderAll();
+      showToast(`${data[activeScenario].label} 장소의 새 미션을 시작해요`);
+    }
+
+    function setCoreOpen(isOpen) {
+      corePanel.hidden = !isOpen;
+      toggleCoreButton.setAttribute('aria-expanded', String(isOpen));
+      toggleCoreButton.textContent = isOpen ? '항상 사용하는 말 숨기기' : '항상 사용하는 말 보기';
+    }
+
+    function renderCategories() {
+      const categories = Object.keys(data[activeScenario].categories);
+      categoryTabs.innerHTML = categories.map(category => `
+        <button class="category-tab ${category === activeCategory ? 'active' : ''}" type="button" role="tab" aria-selected="${category === activeCategory}" data-category="${category}">${category}</button>
+      `).join('');
+      categoryTabs.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => {
+        activeCategory = button.dataset.category;
+        renderCategories();
+        renderKeywords();
+      }));
+    }
+
+    function renderKeywords() {
+      const keywords = data[activeScenario].categories[activeCategory];
+      keywordGrid.innerHTML = keywords.map(([label, iconName, type, color]) => `
+        <button class="keyword-button" type="button" data-label="${escapeHtml(label)}" style="--tile:${color}" aria-label="${escapeHtml(label)}">
+          <span class="keyword-icon" aria-hidden="true">${icon(iconName)}</span>
+          <span class="keyword-label">${escapeHtml(label)}</span>
+        </button>
+      `).join('');
+      keywordGrid.querySelectorAll('[data-label]').forEach(button => button.addEventListener('click', () => addWord(button.dataset.label)));
+    }
+
+    function renderExamples() {
+      exampleButtons.innerHTML = data[activeScenario].examples.map((example, index) => `
+        <button class="example-button" type="button" data-example="${index}">${example.label}</button>
+      `).join('');
+      exampleButtons.querySelectorAll('[data-example]').forEach(button => button.addEventListener('click', () => {
+        selectedWords = [...data[activeScenario].examples[Number(button.dataset.example)].words];
+        renderSentence();
+        showToast('예시 표현을 불러왔어요. 원하는 단어로 바꿔 보세요');
+      }));
+    }
+
+    function findWordMeta(word) {
+      const coreMatch = coreWords.find(([label]) => label === word);
+      if (coreMatch) return { iconName: coreMatch[1] };
+      for (const scenario of Object.values(data)) {
+        for (const keywords of Object.values(scenario.categories)) {
+          const match = keywords.find(([label]) => label === word);
+          if (match) return { iconName: match[1] };
+        }
+      }
+      return { iconName: 'more' };
+    }
+
+    function showOnScreen() {
+      if (!selectedWords.length) {
+        showToast('먼저 키워드를 골라 표현을 만들어 보세요');
+        return false;
+      }
+      showSentence.textContent = selectedWords.join(' ');
+      showWords.innerHTML = selectedWords.map(word => {
+        const meta = findWordMeta(word);
+        return `<span class="show-word">${icon(meta.iconName)}<span>${escapeHtml(word)}</span></span>`;
+      }).join('');
+      showPanel.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeShowButton.focus();
+      return true;
+    }
+
+    function closeShow() {
+      showPanel.hidden = true;
+      document.body.style.overflow = '';
+      showButton.focus();
+    }
+
+    function renderSentence() {
+      if (!selectedWords.length) {
+        sentenceBox.innerHTML = '<div class="sentence-placeholder">오른쪽 키워드를 눌러<br />표현을 만들어 보세요.</div>';
+        return;
+      }
+      sentenceBox.innerHTML = selectedWords.map((word, index) => `
+        <button class="token" type="button" data-token-index="${index}" aria-label="${word}, 눌러서 삭제">
+          ${word}<small aria-hidden="true">×</small>
+        </button>
+      `).join('');
+      sentenceBox.querySelectorAll('[data-token-index]').forEach(button => button.addEventListener('click', () => {
+        selectedWords.splice(Number(button.dataset.tokenIndex), 1);
+        renderSentence();
+      }));
+    }
+
+    function addWord(word) {
+      if (selectedWords.length >= 10) {
+        showToast('표현은 10개 키워드까지 만들 수 있어요');
+        return;
+      }
+      selectedWords.push(word);
+      renderSentence();
+      if (navigator.vibrate) navigator.vibrate(15);
+    }
+
+    function speak() {
+      if (!selectedWords.length) {
+        showToast('먼저 키워드를 골라 표현을 만들어 보세요');
+        return false;
+      }
+      if (!('speechSynthesis' in window)) {
+        showToast('이 브라우저에서는 음성 기능을 지원하지 않아요');
+        return false;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(selectedWords.join(' '));
+      utterance.lang = 'ko-KR';
+      utterance.rate = .88;
+      utterance.pitch = 1;
+      const preferredVoice = selectedVoiceURI ? availableVoices.find(voice => voice.voiceURI === selectedVoiceURI) : null;
+      const koreanVoice = preferredVoice || availableVoices[0] || window.speechSynthesis.getVoices().find(voice => voice.lang.toLowerCase().startsWith('ko'));
+      if (koreanVoice) utterance.voice = koreanVoice;
+      speakButton.classList.add('speaking');
+      utterance.onend = () => speakButton.classList.remove('speaking');
+      utterance.onerror = () => speakButton.classList.remove('speaking');
+      window.speechSynthesis.speak(utterance);
+      return true;
+    }
+
+    function handleListenerAction(action) {
+      let completed = true;
+      if (action.action === 'add') {
+        action.words.forEach(word => addWord(word));
+        showToast(`${action.label}을 표현에 추가했어요`);
+      } else if (action.action === 'speak') {
+        completed = speak();
+      } else if (action.action === 'show') {
+        completed = showOnScreen();
+      }
+      if (completed) {
+        listenerIndex += 1;
+        renderListener();
+      }
+    }
+
+    function renderAll() {
+      renderScenarios();
+      renderMission();
+      renderCoreWords();
+      renderCategories();
+      renderKeywords();
+      renderExamples();
+      renderSentence();
+      renderListener();
+    }
+
+    speakButton.addEventListener('click', speak);
+    showButton.addEventListener('click', showOnScreen);
+    resetMissionButton.addEventListener('click', resetMission);
+    toggleCoreButton.addEventListener('click', () => setCoreOpen(corePanel.hidden));
+    closeShowButton.addEventListener('click', closeShow);
+    showPanel.addEventListener('click', event => {
+      if (event.target === showPanel) closeShow();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !showPanel.hidden) closeShow();
+    });
+    undoButton.addEventListener('click', () => {
+      if (!selectedWords.length) { showToast('삭제할 키워드가 없어요'); return; }
+      selectedWords.pop(); renderSentence();
+    });
+    clearButton.addEventListener('click', () => {
+      if (!selectedWords.length) { showToast('이미 처음 상태예요'); return; }
+      selectedWords = []; renderSentence(); showToast('표현을 비웠어요');
+    });
+    voiceSelect.addEventListener('change', () => {
+      const voice = availableVoices[Number(voiceSelect.value)];
+      selectedVoiceURI = voice?.voiceURI || '';
+      if (voice) showToast(`${voice.name}을 선택했어요`);
+    });
+    if ('speechSynthesis' in window) {
+      renderVoices();
+      window.speechSynthesis.addEventListener('voiceschanged', renderVoices);
+    } else {
+      renderVoices();
+    }
+    setCoreOpen(false);
+    renderAll();
+  </script>
+
+
+</body></html>
